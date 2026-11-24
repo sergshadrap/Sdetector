@@ -10,6 +10,7 @@ How to use: copy bin/sdetector, lib/ (the vendor ive_neo and mpi_neo libraries a
 The secured area is the zone drawn in Majestic (read from /etc/majestic.yaml). Majestic must be running.
 
 Memory on 128 MB boards is tight (see OpenIPC/firmware#2828): set isp.blkCnt to 5 (it gives back ~7 MB; the cost is a dropped frame per JPEG snapshot). The detector also skips a job while MemAvailable is below 15 MB (--min-avail).
+Two video channels are in use , ch0 - native 2592x1944x20fps  -VPSS get frames there, ch1- 640x480x15fps -IVE check the movement there. 
 
 Night: YOLO gets a grey picture while Majestic's night mode is on; the e-mail picture stays in colour. --scene indoor|outdoor and --range near|far are presets . If the sensor delivers far fewer frames than video1.fps (slow shutter at dusk), it writes a warning to the log.
 
